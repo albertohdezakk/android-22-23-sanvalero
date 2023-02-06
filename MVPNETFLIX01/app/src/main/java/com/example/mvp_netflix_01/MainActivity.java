@@ -5,15 +5,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.Toast;
 
+import com.example.mvp_netflix_01.contract.LoginContract;
+import com.example.mvp_netflix_01.model.pojo.User;
+import com.example.mvp_netflix_01.presenter.LoginPresenter;
 import com.example.mvp_netflix_01.view.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
     private static final int SCREEN = 1;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         final Handler handler = new Handler();
         // SetTimeOut - setInterval
@@ -29,4 +37,6 @@ public class MainActivity extends AppCompatActivity {
         }, 4000);
 
     }
+
+
 }

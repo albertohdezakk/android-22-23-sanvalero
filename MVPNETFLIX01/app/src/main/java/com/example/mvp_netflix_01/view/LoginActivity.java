@@ -7,11 +7,16 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.mvp_netflix_01.R;
+import com.example.mvp_netflix_01.contract.LoginContract;
+import com.example.mvp_netflix_01.model.pojo.User;
+import com.example.mvp_netflix_01.presenter.LoginPresenter;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements LoginContract.View {
     private EditText edtUserLogin;
     private EditText edtPasswordLogin;
     private Button btnLogin;
+
+    private LoginPresenter loginPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +31,17 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
     }
     private void initPresenter(){
+        loginPresenter = new LoginPresenter();
+        loginPresenter.lstFilms(null);
+    }
+
+    @Override
+    public void successLogin(User user, String message) {
+
+    }
+
+    @Override
+    public void failureLogin(String err) {
 
     }
 }
